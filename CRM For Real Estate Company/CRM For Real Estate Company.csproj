@@ -1,0 +1,613 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7C9DAEE7-7017-4DF1-BA3A-6D791A008FF6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>CRM_For_Real_Estate_Company</RootNamespace>
+    <AssemblyName>CRM For Real Estate Company</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddOwnerProperty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddOwnerProperty.Designer.cs" />
+    <Compile Include="AddProperty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddProperty.Designer.cs">
+      <DependentUpon>AddProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminMenu.Designer.cs">
+      <DependentUpon>AdminMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminReport.Designer.cs">
+      <DependentUpon>AdminReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BL\AddressBL.cs" />
+    <Compile Include="BL\buyerBL.cs" />
+    <Compile Include="BL\EmployeeBL.cs" />
+    <Compile Include="BL\InterestedIn.cs" />
+    <Compile Include="BL\LeadBL.cs" />
+    <Compile Include="BL\NotificationBL.cs" />
+    <Compile Include="BL\OwnerBL.cs" />
+    <Compile Include="BL\PaymentsMethodBL.cs" />
+    <Compile Include="BL\PersonBL.cs" />
+    <Compile Include="BL\PriorityBL.cs" />
+    <Compile Include="BL\PropertyBL.cs" />
+    <Compile Include="BL\ResponseBL.cs" />
+    <Compile Include="BL\RoleBL.cs" />
+    <Compile Include="BL\SourceBL.cs" />
+    <Compile Include="BL\StatusBL.cs" />
+    <Compile Include="BL\TaskBL.cs" />
+    <Compile Include="BL\TypeBL.cs" />
+    <Compile Include="BuyerMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BuyerMenu.Designer.cs">
+      <DependentUpon>BuyerMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BuyProperty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BuyProperty.Designer.cs">
+      <DependentUpon>BuyProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configuration.cs" />
+    <Compile Include="DL\AddressDL.cs" />
+    <Compile Include="DL\buyerDL.cs" />
+    <Compile Include="DL\EmployeeDL.cs" />
+    <Compile Include="DL\InterestedInDL.cs" />
+    <Compile Include="DL\LeadDL.cs" />
+    <Compile Include="DL\NotificationDL.cs" />
+    <Compile Include="DL\OwnerDL.cs" />
+    <Compile Include="DL\PaymentsDL.cs" />
+    <Compile Include="DL\PaymentsMethodDL.cs" />
+    <Compile Include="DL\PersonDL.cs" />
+    <Compile Include="DL\PriorityDL.cs" />
+    <Compile Include="DL\PropertyDL.cs" />
+    <Compile Include="DL\ResponseDL.cs" />
+    <Compile Include="DL\RoleDL.cs" />
+    <Compile Include="DL\SalesDL.cs" />
+    <Compile Include="DL\SourceDL.cs" />
+    <Compile Include="DL\StatusDL.cs" />
+    <Compile Include="DL\TaskDL.cs" />
+    <Compile Include="DL\TypeDL.cs" />
+    <Compile Include="EmployeeMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeMenu.Designer.cs">
+      <DependentUpon>EmployeeMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EReport.Designer.cs">
+      <DependentUpon>EReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InsertProperty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InsertProperty.Designer.cs">
+      <DependentUpon>InsertProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lead.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lead.Designer.cs">
+      <DependentUpon>Lead.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lead2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lead2.Designer.cs">
+      <DependentUpon>Lead2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OwnerMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OwnerMenu.Designer.cs">
+      <DependentUpon>OwnerMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Report\AllPropertyRent.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AllPropertyRent.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\AllPropertyReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AllPropertyReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\AllPropertySales.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AllPropertySales.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\CommissionReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CommissionReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\EmployeeSalary.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmployeeSalary.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\EmployeeSales.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmployeeSales.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\EmployeeSaleSale.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmployeeSaleSale.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\EmployeeSalesRent.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmployeeSalesRent.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\RemainProperty.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RemainProperty.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\RemainPropertyRENT.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RemainPropertyRENT.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\RemainPropertySales.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RemainPropertySales.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\Report1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Report1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\revenue.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>revenue.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\revenueRent.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>revenueRent.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\revenueSale.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>revenueSale.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\Sale.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Sale.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\SalesRent.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SalesRent.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\SalesSale.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SalesSale.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ResetPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResetPassword.Designer.cs">
+      <DependentUpon>ResetPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Response.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Response.Designer.cs">
+      <DependentUpon>Response.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sales.Designer.cs">
+      <DependentUpon>Sales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SignIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SignIn.Designer.cs">
+      <DependentUpon>SignIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SignUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SignUp.Designer.cs" />
+    <Compile Include="Task.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Task.Designer.cs">
+      <DependentUpon>Task.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TaskAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TaskAdmin.Designer.cs">
+      <DependentUpon>TaskAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TaskEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TaskEmployee.Designer.cs">
+      <DependentUpon>TaskEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdatePayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdatePayment.Designer.cs">
+      <DependentUpon>UpdatePayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateProperty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateProperty.Designer.cs">
+      <DependentUpon>UpdateProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateTask.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateTask.Designer.cs" />
+    <Compile Include="ViewAssignedProperty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewAssignedProperty.Designer.cs">
+      <DependentUpon>ViewAssignedProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewEmployeeProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewEmployeeProfile.Designer.cs">
+      <DependentUpon>ViewEmployeeProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewEmployeeTask.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewEmployeeTask.Designer.cs">
+      <DependentUpon>ViewEmployeeTask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewInterestedIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewInterestedIn.Designer.cs" />
+    <Compile Include="ViewLeadPropety.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewLeadPropety.Designer.cs">
+      <DependentUpon>ViewLeadPropety.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewLeadSales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewLeadSales.Designer.cs" />
+    <Compile Include="ViewOwnerSales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewOwnerSales.Designer.cs">
+      <DependentUpon>ViewOwnerSales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewPaymentAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewPaymentAdmin.Designer.cs" />
+    <Compile Include="ViewProperty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewProperty.Designer.cs">
+      <DependentUpon>ViewProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewResponseAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewResponseAdmin.Designer.cs" />
+    <Compile Include="ViewSaleAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewSaleAdmin.Designer.cs" />
+    <EmbeddedResource Include="AddOwnerProperty.resx" />
+    <EmbeddedResource Include="AddProperty.resx">
+      <DependentUpon>AddProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminMenu.resx">
+      <DependentUpon>AdminMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminReport.resx">
+      <DependentUpon>AdminReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BuyerMenu.resx">
+      <DependentUpon>BuyerMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BuyProperty.resx">
+      <DependentUpon>BuyProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeMenu.resx">
+      <DependentUpon>EmployeeMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EReport.resx">
+      <DependentUpon>EReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InsertProperty.resx">
+      <DependentUpon>InsertProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lead.resx">
+      <DependentUpon>Lead.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lead2.resx">
+      <DependentUpon>Lead2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OwnerMenu.resx">
+      <DependentUpon>OwnerMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Report\AllPropertyRent.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AllPropertyRent.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\AllPropertyReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AllPropertyReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\AllPropertySales.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AllPropertySales.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\CommissionReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CommissionReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\EmployeeSalary.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>EmployeeSalary.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\EmployeeSales.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>EmployeeSales.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\EmployeeSaleSale.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>EmployeeSaleSale.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\EmployeeSalesRent.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>EmployeeSalesRent.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\RemainProperty.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RemainProperty.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\RemainPropertyRENT.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RemainPropertyRENT.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\RemainPropertySales.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RemainPropertySales.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Report1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Report1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\revenue.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>revenue.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\revenueRent.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>revenueRent.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\revenueSale.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>revenueSale.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Sale.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Sale.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\SalesRent.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SalesRent.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\SalesSale.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SalesSale.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResetPassword.resx">
+      <DependentUpon>ResetPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Response.resx">
+      <DependentUpon>Response.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sales.resx">
+      <DependentUpon>Sales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SignIn.resx">
+      <DependentUpon>SignIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SignUp.resx" />
+    <EmbeddedResource Include="Task.resx">
+      <DependentUpon>Task.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TaskAdmin.resx">
+      <DependentUpon>TaskAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TaskEmployee.resx">
+      <DependentUpon>TaskEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdatePayment.resx">
+      <DependentUpon>UpdatePayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateProperty.resx">
+      <DependentUpon>UpdateProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateTask.resx" />
+    <EmbeddedResource Include="ViewAssignedProperty.resx">
+      <DependentUpon>ViewAssignedProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewEmployeeProfile.resx">
+      <DependentUpon>ViewEmployeeProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewEmployeeTask.resx">
+      <DependentUpon>ViewEmployeeTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewInterestedIn.resx" />
+    <EmbeddedResource Include="ViewLeadPropety.resx">
+      <DependentUpon>ViewLeadPropety.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewLeadSales.resx" />
+    <EmbeddedResource Include="ViewOwnerSales.resx">
+      <DependentUpon>ViewOwnerSales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewPaymentAdmin.resx" />
+    <EmbeddedResource Include="ViewProperty.resx">
+      <DependentUpon>ViewProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewResponseAdmin.resx" />
+    <EmbeddedResource Include="ViewSaleAdmin.resx" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images %281%291.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\real-estate-business-logo-vector-23818258 %282%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="order.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
